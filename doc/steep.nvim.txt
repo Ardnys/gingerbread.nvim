@@ -1,85 +1,82 @@
-*gingerbread.nvim.txt*        For Neovim >= 0.8.0        Last change: 2025 June 25
+*steep.nvim.txt*        For Neovim >= 0.8.0        Last change: 2025 June 25
 
 ==============================================================================
-Table of Contents                             *gingerbread.nvim-table-of-contents*
+Table of Contents                             *steep.nvim-table-of-contents*
 
-1. Prerequisites                                  |gingerbread.nvim-prerequisites|
-2. Installing                                        |gingerbread.nvim-installing|
-  - Using packer                        |gingerbread.nvim-installing-using-packer|
-  - Using lazy.nvim                  |gingerbread.nvim-installing-using-lazy.nvim|
-  - Using vim-plug                    |gingerbread.nvim-installing-using-vim-plug|
-3. Basic Usage                                      |gingerbread.nvim-basic-usage|
-4. Configuration                                  |gingerbread.nvim-configuration|
-  - Overriding                         |gingerbread.nvim-configuration-overriding|
+1. Prerequisites                                  |steep.nvim-prerequisites|
+2. Installing                                        |steep.nvim-installing|
+  - Using packer                        |steep.nvim-installing-using-packer|
+  - Using lazy.nvim                  |steep.nvim-installing-using-lazy.nvim|
+  - Using vim-plug                    |steep.nvim-installing-using-vim-plug|
+3. Basic Usage                                      |steep.nvim-basic-usage|
+4. Configuration                                  |steep.nvim-configuration|
+  - Overriding                         |steep.nvim-configuration-overriding|
 >
-      <h1> <img src="https://i.postimg.cc/WpQzgxVh/plugin-Icon.png" width="80px"><br/>gingerbread.nvim</h1>
+      <h1> <img src="https://i.postimg.cc/WpQzgxVh/plugin-Icon.png" width="80px"><br/>steep.nvim</h1>
      </div>
 <
 
 
-A port of gingerbread community <https://github.com/gingerbread-community/gingerbread>
-theme to lua with treesitter
-<https://github.com/nvim-treesitter/nvim-treesitter> and |semantic highlights|
-support!
+A theme inspired by soaked green tea leaves.
 
 
 ==============================================================================
-1. Prerequisites                                  *gingerbread.nvim-prerequisites*
+1. Prerequisites                                  *steep.nvim-prerequisites*
 
 Neovim 0.8.0+
 
 
 ==============================================================================
-2. Installing                                        *gingerbread.nvim-installing*
+2. Installing                                        *steep.nvim-installing*
 
 
-USING PACKER                            *gingerbread.nvim-installing-using-packer*
+USING PACKER                            *steep.nvim-installing-using-packer*
 
 >lua
-    use { "ellisonleao/gingerbread.nvim" }
+    use { "ardnys/steep.nvim" }
 <
 
 
-USING LAZY.NVIM                      *gingerbread.nvim-installing-using-lazy.nvim*
+USING LAZY.NVIM                      *steep.nvim-installing-using-lazy.nvim*
 
 >lua
-    { "ellisonleao/gingerbread.nvim", priority = 1000 , config = true, opts = ...}
+    { "ardnys/steep.nvim", priority = 1000 , config = true, opts = ...}
 <
 
 
-USING VIM-PLUG                        *gingerbread.nvim-installing-using-vim-plug*
+USING VIM-PLUG                        *steep.nvim-installing-using-vim-plug*
 
 >vim
-    Plug 'ellisonleao/gingerbread.nvim'
+    Plug 'ardnys/steep.nvim'
 <
 
 
 ==============================================================================
-3. Basic Usage                                      *gingerbread.nvim-basic-usage*
+3. Basic Usage                                      *steep.nvim-basic-usage*
 
 Inside `init.vim`
 
 >vim
     set background=dark " or light if you want light mode
-    colorscheme gingerbread
+    colorscheme steep
 <
 
 Inside `init.lua`
 
 >lua
     vim.o.background = "dark" -- or "light" for light mode
-    vim.cmd([[colorscheme gingerbread]])
+    vim.cmd([[colorscheme steep]])
 <
 
 
 ==============================================================================
-4. Configuration                                  *gingerbread.nvim-configuration*
+4. Configuration                                  *steep.nvim-configuration*
 
-Additional settings for gingerbread are:
+Additional settings for steep are:
 
 >lua
     -- Default options:
-    require("gingerbread").setup({
+    require("steep").setup({
       terminal_colors = true, -- add neovim terminal colors
       undercurl = true,
       underline = true,
@@ -102,14 +99,14 @@ Additional settings for gingerbread are:
       dim_inactive = false,
       transparent_mode = false,
     })
-    vim.cmd("colorscheme gingerbread")
+    vim.cmd("colorscheme steep")
 <
 
 **VERY IMPORTANT**Make sure to call setup() **BEFORE** calling the colorscheme
 command, to use your custom configs
 
 
-OVERRIDING                             *gingerbread.nvim-configuration-overriding*
+OVERRIDING                             *steep.nvim-configuration-overriding*
 
 
 PALETTE ~
@@ -117,12 +114,12 @@ PALETTE ~
 You can specify your own palette colors. For example:
 
 >lua
-    require("gingerbread").setup({
+    require("steep").setup({
         palette_overrides = {
             bright_green = "#990000",
         }
     })
-    vim.cmd("colorscheme gingerbread")
+    vim.cmd("colorscheme steep")
 <
 
 
@@ -132,24 +129,24 @@ If you don’t enjoy the current color for a specific highlight group, now you
 can just override it in the setup. For example:
 
 >lua
-    require("gingerbread").setup({
+    require("steep").setup({
         overrides = {
             SignColumn = {bg = "#ff9900"}
         }
     })
-    vim.cmd("colorscheme gingerbread")
+    vim.cmd("colorscheme steep")
 <
 
 It also works with treesitter groups and lsp semantic highlight tokens
 
 >lua
-    require("gingerbread").setup({
+    require("steep").setup({
         overrides = {
             ["@lsp.type.method"] = { bg = "#ff9900" },
             ["@comment.lua"] = { bg = "#000000" },
         }
     })
-    vim.cmd("colorscheme gingerbread")
+    vim.cmd("colorscheme steep")
 <
 
 Please note that the override values must follow the attributes from the

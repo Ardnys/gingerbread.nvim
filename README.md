@@ -20,19 +20,19 @@ Neovim 0.8.0+
 ## Using `packer`
 
 ```lua
-use { "Ardnys/gingerbread.nvim" }
+use { "Ardnys/steep.nvim" }
 ```
 
 ## Using `lazy.nvim`
 
 ```lua
-{ "Ardnys/gingerbread.nvim", priority = 1000 , config = true, opts = ...}
+{ "Ardnys/steep.nvim", priority = 1000 , config = true, opts = ...}
 ```
 
 ## Using `vim-plug`
 
 ```vim
-Plug 'Ardnys/gingerbread.nvim'
+Plug 'Ardnys/steep.nvim'
 ```
 
 # Basic Usage
@@ -41,23 +41,23 @@ Inside `init.vim`
 
 ```vim
 set background=dark " or light if you want light mode
-colorscheme gingerbread
+colorscheme steep
 ```
 
 Inside `init.lua`
 
 ```lua
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gingerbread]])
+vim.cmd([[colorscheme steep]])
 ```
 
 # Configuration
 
-Additional settings for gingerbread are:
+Additional settings for steep are:
 
 ```lua
 -- Default options:
-require("gingerbread").setup({
+require("steep").setup({
   terminal_colors = true, -- add neovim terminal colors
   undercurl = true,
   underline = true,
@@ -80,7 +80,7 @@ require("gingerbread").setup({
   dim_inactive = false,
   transparent_mode = false,
 })
-vim.cmd("colorscheme gingerbread")
+vim.cmd("colorscheme steep")
 ```
 
 **VERY IMPORTANT**: Make sure to call setup() **BEFORE** calling the colorscheme command, to use your custom configs
@@ -92,12 +92,12 @@ vim.cmd("colorscheme gingerbread")
 You can specify your own palette colors. For example:
 
 ```lua
-require("gingerbread").setup({
+require("steep").setup({
     palette_overrides = {
         bright_green = "#990000",
     }
 })
-vim.cmd("colorscheme gingerbread")
+vim.cmd("colorscheme steep")
 ```
 
 ### Highlight groups
@@ -106,24 +106,24 @@ If you don't enjoy the current color for a specific highlight group, now you can
 example:
 
 ```lua
-require("gingerbread").setup({
+require("steep").setup({
     overrides = {
         SignColumn = {bg = "#ff9900"}
     }
 })
-vim.cmd("colorscheme gingerbread")
+vim.cmd("colorscheme steep")
 ```
 
 It also works with treesitter groups and lsp semantic highlight tokens
 
 ```lua
-require("gingerbread").setup({
+require("steep").setup({
     overrides = {
         ["@lsp.type.method"] = { bg = "#ff9900" },
         ["@comment.lua"] = { bg = "#000000" },
     }
 })
-vim.cmd("colorscheme gingerbread")
+vim.cmd("colorscheme steep")
 ```
 
 Please note that the override values must follow the attributes from the highlight group map, such as:

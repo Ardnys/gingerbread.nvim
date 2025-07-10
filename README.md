@@ -1,11 +1,11 @@
 <div align="center">
-      <h1> <img src="https://i.postimg.cc/WpQzgxVh/plugin-Icon.png" width="80px"><br/>gingerbread.nvim</h1>
+      <h1> <img src="https://github.com/Ardnys/gingerbread.nvim/blob/main/images/steep_logo_glass_gpt.png" width="80px"><br/>steep.nvim</h1>
      </div>
 <p align="center"> 
       <a href="#"><img alt="Made with Lua" src="https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua" style="vertical-align:center" /></a>
 </p>
 
-Gingerbread is built upon (and somewhat inspired by) popular [gruvbox](https://github.com/ellisonleao/gruvbox.nvim) theme.
+Steep is built upon (and somewhat inspired by) popular [gruvbox](https://github.com/ellisonleao/gruvbox.nvim) theme.
 
 <p align="center">
     <img src="https://i.postimg.cc/fy3tnGFt/gingerbread-themes.png" />

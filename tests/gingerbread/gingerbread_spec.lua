@@ -1,6 +1,6 @@
-require("plenary.reload").reload_module("gruvbox", true)
-local gruvbox = require("gruvbox")
-local default = gruvbox.config
+require("plenary.reload").reload_module("gingerbread", true)
+local gingerbread = require("gingerbread")
+local default = gingerbread.config
 
 local function clear_term_colors()
   for item = 0, 15 do
@@ -10,8 +10,8 @@ end
 
 describe("tests", function()
   it("works with default values", function()
-    gruvbox.setup()
-    assert.are.same(gruvbox.config, default)
+    gingerbread.setup()
+    assert.are.same(gingerbread.config, default)
   end)
 
   it("works with config overrides", function()
@@ -39,8 +39,8 @@ describe("tests", function()
       transparent_mode = false,
     }
 
-    gruvbox.setup({ undercurl = false, underline = false })
-    assert.are.same(gruvbox.config, expected)
+    gingerbread.setup({ undercurl = false, underline = false })
+    assert.are.same(gingerbread.config, expected)
   end)
 
   it("should override a hightlight color", function()
@@ -51,8 +51,8 @@ describe("tests", function()
       },
     }
 
-    gruvbox.setup(config)
-    gruvbox.load()
+    gingerbread.setup(config)
+    gingerbread.load()
 
     local search_group_id = vim.api.nvim_get_hl_id_by_name("Search")
     local search_values = {
@@ -78,8 +78,8 @@ describe("tests", function()
       },
     }
 
-    gruvbox.setup(config)
-    gruvbox.load()
+    gingerbread.setup(config)
+    gingerbread.load()
 
     local search_group_id = vim.api.nvim_get_hl_id_by_name("Search")
     local search_values = {
@@ -103,8 +103,8 @@ describe("tests", function()
         TelescopePreviewBorder = { fg = "#990000", bg = nil },
       },
     }
-    gruvbox.setup(config)
-    gruvbox.load()
+    gingerbread.setup(config)
+    gingerbread.load()
 
     local group_id = vim.api.nvim_get_hl_id_by_name("TelescopePreviewBorder")
     local values = {
@@ -124,8 +124,8 @@ describe("tests", function()
       },
     }
 
-    gruvbox.setup(config)
-    gruvbox.load()
+    gingerbread.setup(config)
+    gingerbread.load()
 
     local group_id = vim.api.nvim_get_hl_id_by_name("Comment")
     local values = {
@@ -136,54 +136,54 @@ describe("tests", function()
 
   it("does not set terminal colors when terminal_colors is false", function()
     clear_term_colors()
-    gruvbox.setup({ terminal_colors = false })
-    gruvbox.load()
+    gingerbread.setup({ terminal_colors = false })
+    gingerbread.load()
     assert.is_nil(vim.g.terminal_color_0)
   end)
 
   it("sets terminal colors when terminal_colors is true", function()
     clear_term_colors()
-    gruvbox.setup({ terminal_colors = true })
-    gruvbox.load()
+    gingerbread.setup({ terminal_colors = true })
+    gingerbread.load()
 
     -- dark bg
-    local colors = require("gruvbox").palette
+    local colors = require("gingerbread").palette
     vim.opt.background = "dark"
     assert.are.same(vim.g.terminal_color_0, colors.dark0)
 
     -- light bg
     clear_term_colors()
-    gruvbox.load()
+    gingerbread.load()
     vim.opt.background = "light"
     assert.are.same(vim.g.terminal_color_0, colors.light0)
   end)
 
   it("multiple calls to setup() are independent", function()
     -- First call to setup
-    gruvbox.setup({
+    gingerbread.setup({
       contrast = "soft",
       overrides = { CursorLine = { bg = "#FF0000" } },
     })
-    assert.are.same(gruvbox.config.contrast, "soft")
-    assert.are.same(gruvbox.config.overrides.CursorLine.bg, "#FF0000")
+    assert.are.same(gingerbread.config.contrast, "soft")
+    assert.are.same(gingerbread.config.overrides.CursorLine.bg, "#FF0000")
 
     -- Second call to setup
-    gruvbox.setup({ contrast = "hard" })
-    assert.are.same(gruvbox.config.contrast, "hard")
+    gingerbread.setup({ contrast = "hard" })
+    assert.are.same(gingerbread.config.contrast, "hard")
     -- Check that overrides from the first call are not present
-    assert.is_nil(gruvbox.config.overrides.CursorLine)
+    assert.is_nil(gingerbread.config.overrides.CursorLine)
 
     -- Third call to setup with different overrides
-    gruvbox.setup({
+    gingerbread.setup({
       overrides = { Normal = { fg = "#00FF00" } },
     })
-    assert.are.same(gruvbox.config.contrast, "") -- Contrast should be reset to default (empty string)
-    assert.is_nil(gruvbox.config.overrides.CursorLine) -- Still no CursorLine override
-    assert.are.same(gruvbox.config.overrides.Normal.fg, "#00FF00") -- New override is present
+    assert.are.same(gingerbread.config.contrast, "") -- Contrast should be reset to default (empty string)
+    assert.is_nil(gingerbread.config.overrides.CursorLine) -- Still no CursorLine override
+    assert.are.same(gingerbread.config.overrides.Normal.fg, "#00FF00") -- New override is present
 
     -- Call setup with no arguments to reset to defaults
-    gruvbox.setup()
-    assert.are.same(gruvbox.config.contrast, "")
-    assert.is_nil(gruvbox.config.overrides.Normal)
+    gingerbread.setup()
+    assert.are.same(gingerbread.config.contrast, "")
+    assert.is_nil(gingerbread.config.overrides.Normal)
   end)
 end)

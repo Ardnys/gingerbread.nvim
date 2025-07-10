@@ -1,14 +1,11 @@
 <div align="center">
-      <h1> <img src="https://github.com/Ardnys/gingerbread.nvim/blob/main/images/steep_logo_glass_gpt.png" width="80px"><br/>steep.nvim</h1>
+      <h1> <img src="https://github.com/Ardnys/gingerbread.nvim/blob/main/images/steep_logo_glass_gpt.png" width="200px"><br/>steep.nvim</h1>
      </div>
-<p align="center"> 
-      <a href="#"><img alt="Made with Lua" src="https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua" style="vertical-align:center" /></a>
-</p>
 
 Steep is built upon (and somewhat inspired by) popular [gruvbox](https://github.com/ellisonleao/gruvbox.nvim) theme.
 
 <p align="center">
-    <img src="https://i.postimg.cc/fy3tnGFt/gingerbread-themes.png" />
+    <img src="https://github.com/Ardnys/gingerbread.nvim/blob/main/images/steep_palette.png" />
 </p>
 
 # Prerequisites
@@ -40,14 +37,14 @@ Plug 'Ardnys/steep.nvim'
 Inside `init.vim`
 
 ```vim
-set background=dark " or light if you want light mode
+set background=dark " or light if you want light mode which doesn't work by the way
 colorscheme steep
 ```
 
 Inside `init.lua`
 
 ```lua
-vim.o.background = "dark" -- or "light" for light mode
+vim.o.background = "dark" -- or "light" for light mode but you really should not
 vim.cmd([[colorscheme steep]])
 ```
 

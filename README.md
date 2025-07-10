@@ -2,11 +2,10 @@
       <h1> <img src="https://i.postimg.cc/WpQzgxVh/plugin-Icon.png" width="80px"><br/>gingerbread.nvim</h1>
      </div>
 <p align="center"> 
-      <a href="https://twitter.com/intent/user?screen_name=ellisonleao" target="_blank"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/ellisonleao?style=for-the-badge" style="vertical-align:center" ></a>
       <a href="#"><img alt="Made with Lua" src="https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua" style="vertical-align:center" /></a>
 </p>
 
-A port of [gingerbread community](https://github.com/gingerbread-community/gingerbread) theme to lua with [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) and [semantic highlights](https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight) support!
+Gingerbread is built upon (and somewhat inspired by) popular [gruvbox](https://github.com/ellisonleao/gruvbox.nvim) theme.
 
 <p align="center">
     <img src="https://i.postimg.cc/fy3tnGFt/gingerbread-themes.png" />
@@ -21,19 +20,19 @@ Neovim 0.8.0+
 ## Using `packer`
 
 ```lua
-use { "ellisonleao/gingerbread.nvim" }
+use { "Ardnys/gingerbread.nvim" }
 ```
 
 ## Using `lazy.nvim`
 
 ```lua
-{ "ellisonleao/gingerbread.nvim", priority = 1000 , config = true, opts = ...}
+{ "Ardnys/gingerbread.nvim", priority = 1000 , config = true, opts = ...}
 ```
 
 ## Using `vim-plug`
 
 ```vim
-Plug 'ellisonleao/gingerbread.nvim'
+Plug 'Ardnys/gingerbread.nvim'
 ```
 
 # Basic Usage

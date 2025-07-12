@@ -4,6 +4,7 @@
 local Steep = {}
 
 ---@alias Contrast "hard" | "soft" | ""
+--- TODO: how about this
 
 ---@class ItalicConfig
 ---@field strings boolean
@@ -76,7 +77,7 @@ Steep.palette = {
   dark0_hard = "#0F1108",
   dark0 = "#12140B",
   dark0_soft = "#22231B",
-  dark1 = "#363636",
+  dark1 = "#202020",
   dark2 = "#3C3737",
   dark3 = "#484040",
   dark4 = "#524141",
@@ -126,7 +127,7 @@ Steep.palette = {
   light_aqua_hard = "#87CECB",
   light_aqua = "#94E5E4",
   light_aqua_soft = "#79D6D5",
-  gray = "#363636",
+  gray = "#555555",
 }
 
 -- get a hex list of steep colors based on current bg and constrast config
@@ -330,7 +331,7 @@ local function get_groups()
     iCursor = { link = "Cursor" },
     lCursor = { link = "Cursor" },
     Special = { fg = colors.neutral_purple, italic = true },
-    Comment = { fg = colors.bg4, italic = config.italic.comments },
+    Comment = { fg = colors.gray, italic = config.italic.comments },
     Todo = { fg = colors.bg0, bg = colors.yellow, bold = config.bold, italic = config.italic.comments },
     Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments },
     Error = { fg = colors.red, bold = config.bold, reverse = config.inverse },
@@ -360,7 +361,7 @@ local function get_groups()
     StorageClass = { link = "SteepPurpleBold", italic = true },
     Structure = { link = "SteepGreen" },
     Typedef = { link = "SteepYellow" },
-    Pmenu = { fg = colors.fg1, bg = colors.bg2 },
+    Pmenu = { fg = colors.fg1, bg = colors.bg0 },
     PmenuSel = { fg = colors.bg2, bg = colors.blue, bold = config.bold },
     PmenuSbar = { bg = colors.bg2 },
     PmenuThumb = { bg = colors.bg4 },
@@ -493,17 +494,17 @@ local function get_groups()
     SnacksPickerPathHidden = { link = "SteepGray" },
     SnacksPickerGitStatusUntracked = { link = "SteepGray" },
     SnacksPickerPathIgnored = { link = "SteepBg3" },
-    TelescopeNormal = { link = "SteepFg2" },
-    TelescopeSelection = { link = "CursorLine" },
+    TelescopeNormal = { link = "SteepPurple" },
+    TelescopeSelection = { link = "SteepFg4" },
     TelescopeSelectionCaret = { link = "SteepRed" },
     TelescopeMultiSelection = { link = "SteepFg2" },
     TelescopeBorder = { link = "TelescopeNormal" },
-    TelescopePromptBorder = { link = "TelescopeNormal" },
+    TelescopePromptBorder = { link = "SteepAqua" },
     TelescopeResultsBorder = { link = "TelescopeNormal" },
     TelescopePreviewBorder = { link = "TelescopeNormal" },
     TelescopeMatching = { link = "SteepOrange" },
     TelescopePromptPrefix = { link = "SteepRed" },
-    TelescopePrompt = { link = "TelescopeNormal" },
+    TelescopePrompt = { link = "SteepRed" },
     CmpItemAbbr = { link = "SteepFg0" },
     CmpItemAbbrDeprecated = { link = "SteepFg1" },
     CmpItemAbbrMatch = { link = "SteepBlueBold" },

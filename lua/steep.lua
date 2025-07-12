@@ -330,7 +330,7 @@ local function get_groups()
     iCursor = { link = "Cursor" },
     lCursor = { link = "Cursor" },
     Special = { fg = colors.neutral_purple, italic = true },
-    Comment = { fg = colors.bg3, italic = config.italic.comments },
+    Comment = { fg = colors.bg4, italic = config.italic.comments },
     Todo = { fg = colors.bg0, bg = colors.yellow, bold = config.bold, italic = config.italic.comments },
     Done = { fg = colors.orange, bold = config.bold, italic = config.italic.comments },
     Error = { fg = colors.red, bold = config.bold, reverse = config.inverse },
